@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d3d3d3;
+}
+.nav-Bar{
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100px;
+}
+
+.logo-name{
+    color: #B3B3B3;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.logo-name span{
+    color:#CC0000;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    font-size: 1.5rem;
+}
+.menu .menu-item{
+    padding: 0 20px;
+}
+.menu .menu-item a{
+    color: white;
+    text-decoration: none;
+}
+.menu .menu-item a:hover{
+    color: #B3B3B3;
+}
