@@ -38,3 +38,32 @@ body{
 .menu .menu-item a:hover{
     color: #B3B3B3;
 }
+
+/*
+    main 
+*/
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20rem;
+}
+
+input[type='text']{
+    width: 30%;
+    height: 80px;
+    border-radius: 50px 0 0 50px;
+    padding-left: 20px;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+button[type='submit']{
+    width: 12rem;
+    font-size: 2rem;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
