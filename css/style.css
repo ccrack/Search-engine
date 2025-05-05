@@ -71,7 +71,7 @@ body {
 
 input[type='text'] {
     width: 30%;
-    height: 50px;
+    height: 40px;
     border-radius: 50px 0 0 50px;
     padding-left: 20px;
     font-size: 1rem;
@@ -81,8 +81,8 @@ input[type='text'] {
 }
 
 button[type='submit'] {
-    width: 12rem;
-    font-size: 1.5rem;
+    width: 8rem;
+    font-size: 1rem;
     border-radius: 0 50px 50px 0;
     cursor: pointer;
     border: none;
@@ -90,7 +90,7 @@ button[type='submit'] {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-@media(max-width:768px) {
+@media(max-width:540px) {
     .hamburger{
         display: block;
     }
@@ -104,7 +104,7 @@ button[type='submit'] {
         transform: translateY(-8px) rotate(-45deg);
     }
     .menu{
-        position: fixed;
+        position: absolute;
         top: -100%;
         left: 0;
         gap: 0;
@@ -114,6 +114,39 @@ button[type='submit'] {
         text-align: center;
         transition: 0.5s;
     }
+
+    .menu-item{
+        margin: 16px 0;
+    }
+    .menu.active{
+        top: 75px;
+    }
+}
+@media(max-width:320px) {
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .menu{
+        position: absolute;
+        top: -100%;
+        left: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: #333333;
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
+    }
+
     .menu-item{
         margin: 16px 0;
     }
