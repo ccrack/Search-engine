@@ -17,18 +17,23 @@ $(document).ready(() => {
     btnSubmit.click(() => {
         const searchText = $('#inp-search').val().trim();
         $.ajax({
-            url:`https://api.giphy.com/v1/gifs/search`,
+            url: `https://api.giphy.com/v1/gifs/search`,
             method: 'GET',
             data: {
                 api_key: apiKey,
                 q: searchText,
                 limit: limit
-            }, 
-            success: ((response) =>{
-                console.log(response.data)
+            },
+            success: ((response) => {
+                /* loop my data to get each gif url*/
+                response.data.forEach(gif => {
+                    /* get my gif url (getUrlgif) */
+                    const getUrlGif = gif.images.fixed_width.url;
+                    console.log(getUrlGif);
+                })
             }),
-            error: ((error) =>{
-                console.log("error: "+error)
+            error: ((error) => {
+                console.log("error: " + error)
             })
         })
         console.log(searchText)
