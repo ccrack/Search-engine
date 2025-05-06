@@ -25,11 +25,19 @@ $(document).ready(() => {
                 limit: limit
             },
             success: ((response) => {
+                const gifsContainer = $(".gifs-container");
+                gifsContainer.empty();
                 /* loop my data to get each gif url*/
                 response.data.forEach(gif => {
                     /* get my gif url (getUrlgif) */
                     const getUrlGif = gif.images.fixed_width.url;
-                    console.log(getUrlGif);
+                    const elementGif = `
+                        <div class = "gif-item">
+                            <img src="${getUrlGif}" alt="${searchText}">
+                        </div>
+                    `
+                    gifsContainer.append(elementGif)
+                    console.log(elementGif);
                 })
             }),
             error: ((error) => {
