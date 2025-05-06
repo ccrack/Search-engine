@@ -16,6 +16,21 @@ $(document).ready(() => {
     const limit = 9;
     btnSubmit.click(() => {
         const searchText = $('#inp-search').val().trim();
+        $.ajax({
+            url:`https://api.giphy.com/v1/gifs/search`,
+            method: 'GET',
+            data: {
+                api_key: apiKey,
+                q: searchText,
+                limit: limit
+            }, 
+            success: ((response) =>{
+                console.log(response.data)
+            }),
+            error: ((error) =>{
+                console.log("error: "+error)
+            })
+        })
         console.log(searchText)
     })
 })
