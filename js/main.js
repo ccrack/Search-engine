@@ -37,6 +37,7 @@ $(document).ready(() => {
                         </div>
                     `
                     gifsContainer.append(elementGif)
+                    
                     console.log(elementGif);
                 })
             }),
