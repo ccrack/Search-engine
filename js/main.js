@@ -13,15 +13,19 @@ document.querySelectorAll(".menu-item").forEach(n => n.addEventListener("click",
 $(document).ready(() => {
     const btnSubmit = $('button[type=submit]');
     const apiKey = '3hUBiuIT4SovDhQ3P6ATaDnIuVLGpXhz';
-    const limit = 9;
+    const limit = 18;
     btnSubmit.click(() => {
         const searchText = $('#inp-search').val().trim();
+        getData(searchText)
+    })
+    getData("happy")
+    function getData(txtSearch){
         $.ajax({
             url: `https://api.giphy.com/v1/gifs/search`,
             method: 'GET',
             data: {
                 api_key: apiKey,
-                q: searchText,
+                q: txtSearch,
                 limit: limit
             },
             success: ((response) => {
@@ -33,7 +37,7 @@ $(document).ready(() => {
                     const getUrlGif = gif.images.fixed_width.url;
                     const elementGif = `
                         <div class = "gif-item">
-                            <img src="${getUrlGif}" alt="${searchText}">
+                            <img src="${getUrlGif}" alt="${txtSearch}">
                         </div>
                     `
                     gifsContainer.append(elementGif)
@@ -45,6 +49,6 @@ $(document).ready(() => {
                 console.log("error: " + error)
             })
         })
-        console.log(searchText)
-    })
+        console.log(txtSearch)
+    }
 })
