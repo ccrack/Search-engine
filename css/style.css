@@ -7,6 +7,10 @@
 body {
     background-color: #d3d3d3;
     font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 .nav-Bar {
@@ -107,6 +111,44 @@ button[type='submit'] {
     height: auto;
 }
 
+/* footer */
+.footer-container{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.footer-container h1{
+    font-size: large;
+}
+.contact-container{
+    color: rgb(184, 184, 184);
+}
+.contact-container form{
+    color: rgb(184, 184, 184);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.about-container{
+    color:rgb(184, 184, 184);
+    width: 300px;
+}
+.about-container p{
+ font-size: small;
+}
+.all-rights-container{
+    color: rgb(184, 184, 184);
+    text-align: center;
+    background-color: black;
+}
+.all-rights-container p{
+    font-size: 0.8rem;
+}
 @media(max-width:540px) {
     .hamburger{
         display: block;
