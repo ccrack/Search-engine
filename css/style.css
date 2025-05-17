@@ -101,6 +101,7 @@ button[type='submit'] {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    max-width: 43vw;
     margin: 20px auto;
 }
 .gif-item{
@@ -151,6 +152,21 @@ button[type='submit'] {
 .all-rights-container p{
     font-size: 0.8rem;
 }
+/* form style */
+.form-item{
+    width: 300px;
+    height: 30px;
+    border: 1px solid rgb(100, 100, 100);
+    outline: none;
+    padding-left: 4px;
+}
+input[type="submit"]{
+    padding: 0;
+}
+#txtacomment{
+    height: 50px;
+}
+
 @media(max-width:540px) {
     .hamburger{
         display: block;
