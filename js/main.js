@@ -12,14 +12,26 @@ document.querySelectorAll(".menu-item").forEach((n) =>
     navMenu.classList.remove("active");
   })
 );
+
 $(document).ready(() => {
   const btnSubmit = $("button[type=submit]");
   const apiKey = "3hUBiuIT4SovDhQ3P6ATaDnIuVLGpXhz";
   const limit = 18;
   btnSubmit.click(() => {
     const searchText = $("#inp-search").val().trim();
-    document.querySelector(".targetGif-container").removeChild(document.querySelector("img"));
-    getData(searchText);
+
+    if (searchText) {
+      const targetG = document.querySelector(".targetGif-container");
+      let img = targetG.querySelector('img');
+      if (!img) {
+        
+      } else {
+        targetG.removeChild(document.querySelector("img"));
+      }
+      getData(searchText);
+    } else {
+      return;
+    }
   });
 
   getData("happy");
